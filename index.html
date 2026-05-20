@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Zomato Rating using Flask Deployment</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet'>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <div class="overlay">
+
+        <div class="login">
+
+            <h1>Restaurant Ratings</h1>
+
+            <form action="{{ url_for('predict') }}" method="post">
+
+                <input type="text" name="Online Order" placeholder="Order Online" required />
+
+                <input type="text" name="Book Table" placeholder="Book Table" required />
+
+                <input type="text" name="Votes" placeholder="Votes" required />
+
+                <input type="text" name="Location" placeholder="Location" required />
+
+                <input type="text" name="Restaurant Type" placeholder="Restaurant Type" required />
+
+                <input type="text" name="Cuisines" placeholder="Cuisines" required />
+
+                <input type="text" name="Cost" placeholder="Cost" required />
+
+                <input type="text" name="Menu Item" placeholder="Menu Item" required />
+
+                <button type="submit" class="btn">
+                    Predict
+                </button>
+
+            </form>
+
+            <h2>{{ prediction_text }}</h2>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
